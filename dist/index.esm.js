@@ -4436,7 +4436,7 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
-      if (prevState.size !== this.state.size) {
+      if (prevState.size !== this.state.size && this.props.onResize) {
         var direction = this.isHorizontal() ? "width" : "height";
         this.props.onResize(this.state.size, direction);
       }

@@ -32,7 +32,7 @@ class ResizePanel extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.size !== this.state.size) {
+    if (prevState.size !== this.state.size && this.props.onResize) {
       const direction = this.isHorizontal() ? "width" : "height";
       this.props.onResize(this.state.size, direction);
     }
